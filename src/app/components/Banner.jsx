@@ -61,7 +61,7 @@ export const Banner = () => {
         <source src="/img/bannerBackgroundVideo.mp4" type="video/mp4" />
       </video>
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="d-flex align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) => (
@@ -93,7 +93,7 @@ export const Banner = () => {
                     isVisible ? "animate__animated animate__zoomIn" : ""
                   }
                 >
-                  <img src="/img/bannerSideImage.svg" alt="Header Img" />
+                  <img src="/img/bannerSideImage.png" alt="Header Img" />
                 </div>
               )}
             </TrackVisibility>
