@@ -1,0 +1,13 @@
+{
+  "headings": {
+    "headingSkills": "Skills",
+    "subheadContentLine1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "subheadContentLine2": "Lorem Ipsum has been the industry's standard dummy text."
+  },
+  "skills": [
+    {"skillName": "JavaScript", "percentage": 90},
+    {"skillName": "React", "percentage": 85},
+    {"skillName": "HTML", "percentage": 95},
+    {"skillName": "CSS", "percentage": 80}
+  ]
+}   

@@ -57,9 +57,6 @@ export const Banner = () => {
 
   return (
     <section className="banner" id="home">
-      <video autoPlay muted loop id="bg-video">
-        <source src="/img/bannerBackgroundVideo.mp4" type="video/mp4" />
-      </video>
       <Container>
         <Row className="d-flex align-items-center">
           <Col xs={12} md={6} xl={7}>
