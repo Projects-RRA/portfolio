@@ -10,7 +10,7 @@ const defaultSeoConfig: DefaultSeoProps = {
     site_name: 'Rinith Amin',
     images: [
       {
-        url: 'https://example.com/your-image.jpg', // Direct URL to your Open Graph image
+        url: 'https://rinithamin.in/img/website-previewImage.png', // Direct URL to your Open Graph image
         width: 1200,
         height: 630,
         alt: 'Og Image Alt',
@@ -21,7 +21,7 @@ const defaultSeoConfig: DefaultSeoProps = {
   additionalLinkTags: [
     {
       rel: 'icon',
-      href: '/favicon.ico', // Relative path to your favicon in the `public` directory
+      href: '/img/favicon.ico', // Relative path to your favicon in the `public` directory
     },
   ],
 };
