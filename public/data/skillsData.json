@@ -1,13 +1,17 @@
 {
   "headings": {
     "headingSkills": "Skills",
-    "subheadContentLine1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "subheadContentLine2": "Lorem Ipsum has been the industry's standard dummy text."
+    "subheadContentLine1": "Expertise Spectrum: A range of skills and abilities designed for success and innovation",
+    "subheadContentLine2": "From technical expertise to creative flair, I deliver tailored solutions to exceed project goals."
   },
   "skills": [
+    {"skillName": "HTML", "percentage": 95},
+    {"skillName": "CSS", "percentage": 80},
     {"skillName": "JavaScript", "percentage": 90},
     {"skillName": "React", "percentage": 85},
-    {"skillName": "HTML", "percentage": 95},
-    {"skillName": "CSS", "percentage": 80}
+    {"skillName": "NextJS", "percentage": 80},
+    {"skillName": "NodeJS", "percentage": 75},
+    {"skillName": "Java", "percentage": 60},
+    {"skillName": "OSF", "percentage": 90}
   ]
 }   

@@ -1,9 +1,9 @@
-"use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import navLinks from "../../../public/data/navLinks.json"
 
 const NavBar = () => {
+  const {linkdin, gmail} = navLinks;
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
@@ -39,12 +39,11 @@ const NavBar = () => {
         </Nav>
         <span className="navbar-text">
         <div className="social-icon">
-                <a href="#"><img src="/img/nav-icon1.svg" alt="" /></a>
-                {/* Facebook and Instagram link */}
-                {/* <a href="#"><img src="/img/nav-icon2.svg" alt="" /></a>
-                <a href="#"><img src="/img/nav-icon3.svg" alt="" /></a> */}
+                <a href={linkdin} target="_blank"><img src="/img/nav-icon1.svg" alt="" /></a>
+                <a href={`mailto:${gmail}`}><img src="/img/nav-icon4.svg" alt="" /></a>
+                {/*<a href="#"><img src="/img/nav-icon3.svg" alt="" /></a> */}
               </div>
-            <button className="vvd"><span>Let’s Connect</span></button>
+            {/* <button className="vvd"><span>Let’s Connect</span></button> */}
         </span>
       </Navbar.Collapse>
     </Container>

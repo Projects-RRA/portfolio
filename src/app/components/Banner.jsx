@@ -7,14 +7,13 @@ import TrackVisibility from "react-on-screen";
 import bannerData from "../../../public/data/bannerData.json";
 
 export const Banner = () => {
-  const { textName, textWelcome, textAbout, textLetsConnect } = bannerData;
+  const { textName, textWelcome, textAbout, textAboutSecondLine, roleForAnimation } = bannerData;
 
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [role, setRole] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Oracle Commerce Cloud Developer.", "FullStack Developer."];
   // Time freez for the text after animation
   const period = 3000;
 
@@ -29,8 +28,8 @@ export const Banner = () => {
   }, [role]);
 
   const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
+    let i = loopNum % roleForAnimation.length;
+    let fullText = roleForAnimation[i];
     let updatedRoleText = isDeleting
       ? fullText.substring(0, role.length - 1)
       : fullText.substring(0, role.length + 1);
@@ -75,9 +74,10 @@ export const Banner = () => {
                     </span>
                   </h2>
                   <p>{textAbout}</p>
-                  <button onClick={() => console.log("connect")}>
+                  <p>{textAboutSecondLine}</p>
+                  {/* <button onClick={() => console.log("connect")}>
                     {textLetsConnect} <ArrowRightCircle size={25} />
-                  </button>
+                  </button> */}
                 </div>
               )}
             </TrackVisibility>
@@ -90,7 +90,7 @@ export const Banner = () => {
                     isVisible ? "animate__animated animate__zoomIn" : ""
                   }
                 >
-                  <img src="/img/bannerSideImage.png" alt="Header Img" />
+                  <img src="/img/bannerSideImage.png" alt="Header Img" loading="lazy"/>
                 </div>
               )}
             </TrackVisibility>

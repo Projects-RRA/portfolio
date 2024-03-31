@@ -1,0 +1,16 @@
+{
+    "headings": {
+      "headingProjects": "Projects",
+      "subheadProjects": "Highlighting my work, demonstrating dedication and innovation. From inception to completion, these projects exemplify my commitment to excellence and achieving impactful results.",
+      "tab1Heading": "Projects",
+      "tab2Heading": "Contribution",
+      "tab3Heading": "Experience"
+    },
+    "projects": [
+      {"title": "Personal Portfolio", "description": "Design & Development", "imgUrl": "/img/project_portfolio.png"}
+    ],
+    "contribution": [
+        {"title": "Commerce Site Design", "description": "Design & Development", "imgUrl": "/img/contributionImage1.png"},
+        {"title": "Commerce API Utils", "description": "Design & Development", "imgUrl": "/img/contributionImage2.png", "link": "https://occ-api-utils.netlify.app/"}
+      ]
+  }  
