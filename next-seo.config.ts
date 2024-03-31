@@ -21,7 +21,7 @@ const defaultSeoConfig: DefaultSeoProps = {
   additionalLinkTags: [
     {
       rel: 'icon',
-      href: '/img/favicon.ico', // Relative path to your favicon in the `public` directory
+      href: '/img/favicon1.ico', // Relative path to your favicon in the `public` directory
     },
   ],
 };
