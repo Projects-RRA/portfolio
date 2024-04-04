@@ -1,4 +1,5 @@
 // pages/_document.js
+'use client';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { Inter } from 'next/font/google';
 
