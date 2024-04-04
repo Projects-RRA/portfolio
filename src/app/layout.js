@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Rinith Amin",
-  description: "Portfolio of Rinith Amin",
+  description: "Portfolio of Rinith R Amin",
   keywords: ["rinith,rinithamin,rinith amin,RINITH,RINITH AMIN"],
   author: "Rinith Amin",
   og: {
