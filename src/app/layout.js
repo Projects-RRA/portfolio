@@ -11,7 +11,13 @@ export const metadata = {
   openGraph: {
     title: "Rinith Amin - Portfolio",
     description: "Check out the portfolio of Rinith Amin.",
-    image: "https://rinithamin.in/img/website-previewImage.png"
+    images: [
+      {
+        url: 'https://rinithamin.in/img/website-previewImage.png', // Must be an absolute URL
+        width: 800,
+        height: 600,
+      }
+    ]
   },
   robots: "index, follow"
 };
