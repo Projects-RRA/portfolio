@@ -8,7 +8,7 @@ export const metadata = {
   description: "Portfolio of Rinith R Amin",
   keywords: ["rinith,rinithamin,rinith amin,RINITH,RINITH AMIN"],
   author: "Rinith Amin",
-  og: {
+  openGraph: {
     title: "Rinith Amin - Portfolio",
     description: "Check out the portfolio of Rinith Amin.",
     image: "https://rinithamin.in/img/website-previewImage.png"
