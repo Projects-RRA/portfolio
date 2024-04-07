@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import fortuneData from "../../../public/data/fortuneData.json";
 
 const FortunePage = () => {
   const [fortune, setFortune] = useState(null);
@@ -7,32 +8,47 @@ const FortunePage = () => {
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
 
-  const fetchFortune = async () => {
+  // const fetchFortune = async () => {
+  //   setLoading(true);
+  //   const options = {
+  //     method: "GET",
+  //     url: "https://fortune-cookie4.p.rapidapi.com/slack",
+  //     headers: {
+  //       "X-RapidAPI-Key": "fb1658f53dmsh7124052fa0fdab3p1e9b4djsn9bedde845e45",
+  //       "X-RapidAPI-Host": "fortune-cookie4.p.rapidapi.com",
+  //     },
+  //   };
+  //   try {
+  //     const response = await axios.request(options);
+  //     setFortune(response.data.text);
+  //     setShowPopup(true); // Show the popup after fetching the fortune
+  //   } catch (error) {
+  //     console.error(error);
+  //     setError(error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  
+  const getFortune = () => {
     setLoading(true);
-    const options = {
-      method: "GET",
-      url: "https://fortune-cookie4.p.rapidapi.com/slack",
-      headers: {
-        "X-RapidAPI-Key": "fb1658f53dmsh7124052fa0fdab3p1e9b4djsn9bedde845e45",
-        "X-RapidAPI-Host": "fortune-cookie4.p.rapidapi.com",
-      },
-    };
-    try {
-      const response = await axios.request(options);
-      setFortune(response.data.text);
-      setShowPopup(true); // Show the popup after fetching the fortune
-    } catch (error) {
-      console.error(error);
-      setError(error.message);
-    } finally {
-      setLoading(false);
+    // Function to get a random key from an object
+    function getRandomKey(obj) {
+      return Object.keys(obj)[
+        Math.floor(Math.random() * Object.keys(obj).length)
+      ];
     }
+    const randomKey = getRandomKey(fortuneData);
+    setFortune(fortuneData[randomKey]);
+    setLoading(false);
+    setShowPopup(true);
   };
 
   return (
     <div>
       <button
-        onClick={fetchFortune}
+        onClick={getFortune}
         disabled={loading}
         className={`bg-transparent text-white font-bold py-2 px-4 rounded ${
           loading ? "cursor-not-allowed" : ""
