@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import fortuneData from "../../../public/data/fortuneData.json";
 
@@ -30,7 +30,20 @@ const FortunePage = () => {
   //   }
   // };
 
-  
+  async function fetchFortune() {
+    setLoading(true);
+    try {
+      const response = await axios.get("/api/randomFortune");
+      const data = response.data;
+      const fortuneValue = data[Object.keys(data)[0]];
+      setFortune(fortuneValue);
+      setLoading(false);
+      setShowPopup(true);
+    } catch (error) {
+      console.error("Error fetching fortune:", error);
+    }
+  }
+
   const getFortune = () => {
     setLoading(true);
     // Function to get a random key from an object
@@ -48,7 +61,7 @@ const FortunePage = () => {
   return (
     <div>
       <button
-        onClick={getFortune}
+        onClick={fetchFortune}
         disabled={loading}
         className={`bg-transparent text-white font-bold py-2 px-4 rounded ${
           loading ? "cursor-not-allowed" : ""
