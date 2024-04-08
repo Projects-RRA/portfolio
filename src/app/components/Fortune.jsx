@@ -8,6 +8,7 @@ const FortunePage = () => {
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
 
+  // Fetching data from 3rd party API
   // const fetchFortune = async () => {
   //   setLoading(true);
   //   const options = {
@@ -30,6 +31,24 @@ const FortunePage = () => {
   //   }
   // };
 
+  // Getting data directly from JSON and displaying
+  // const getFortune = () => {
+  //   setLoading(true);
+  //   // Function to get a random key from an object
+  //   function getRandomKey(obj) {
+  //     return Object.keys(obj)[
+  //       Math.floor(Math.random() * Object.keys(obj).length)
+  //     ];
+  //   }
+  //   const randomKey = getRandomKey(fortuneData);
+  //   setFortune(fortuneData[randomKey]);
+  //   setLoading(false);
+  //   setShowPopup(true);
+  // };
+
+
+  // Created a API under pages->api->randomFortune.js from there fetching data
+
   async function fetchFortune() {
     setLoading(true);
     try {
@@ -43,20 +62,6 @@ const FortunePage = () => {
       console.error("Error fetching fortune:", error);
     }
   }
-
-  const getFortune = () => {
-    setLoading(true);
-    // Function to get a random key from an object
-    function getRandomKey(obj) {
-      return Object.keys(obj)[
-        Math.floor(Math.random() * Object.keys(obj).length)
-      ];
-    }
-    const randomKey = getRandomKey(fortuneData);
-    setFortune(fortuneData[randomKey]);
-    setLoading(false);
-    setShowPopup(true);
-  };
 
   return (
     <div>
