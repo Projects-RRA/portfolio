@@ -698,22 +698,28 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .CircularProgressbar-text {
   fill: #fff !important;
 }
-.react-multiple-carousel__arrow--left{
+.react-multiple-carousel__arrow--left {
   left: calc(1% + 1px) !important;
 }
-.react-multiple-carousel__arrow--right{
+.react-multiple-carousel__arrow--right {
   right: calc(1% + 1px) !important;
+}
+.RR_PageNotFound404 {
+  font-size: 3rem !important;
+}
+.RR_404Banner{
+  padding: 4rem 0rem 0rem 0rem !important;
 }
 @media (max-width: 750px) {
   .project .nav.nav-pills .nav-link {
     font-size: 0.8rem;
   }
-  .RR_FooterLogoOverride{
+  .RR_FooterLogoOverride {
     display: flex;
     justify-content: center;
     padding-bottom: 2rem;
   }
-  .RR_TimelineFontOverride{
-      font-size: 2rem !important;
+  .RR_TimelineFontOverride {
+    font-size: 2rem !important;
   }
 }
