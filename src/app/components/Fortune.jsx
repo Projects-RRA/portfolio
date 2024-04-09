@@ -52,7 +52,7 @@ const FortunePage = () => {
   async function fetchFortune() {
     setLoading(true);
     try {
-      const response = await axios.get("/api/randomFortune");
+      const response = await axios.get("/api/getRandomFortune");
       const data = response.data;
       const fortuneValue = data[Object.keys(data)[0]];
       setFortune(fortuneValue);
