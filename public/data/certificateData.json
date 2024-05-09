@@ -1,0 +1,25 @@
+{
+  "certificates": [
+    {
+      "title": "Oracle CX Commerce 2023 Implementation Certified Professional",
+      "imgUrl": "/img/OCC.png"
+    },
+    {
+      "title": "Oracle Cloud Customer Connect – Red Ribbon Member",
+      "imgUrl": "/img/OCC-RedRibbon.png"
+    },
+    {
+      "title": "Oracle Cloud Customer Connect – Green Ribbon Member",
+      "imgUrl": "/img/OCC-GreenRibbon.png"
+    },
+    {
+      "title": " Oracle Cloud Infrastructure 2023 AI Certified Foundations Associate",
+      "imgUrl": "/img/AI.png"
+    },
+    { "title": "Monthly Star Award: ApexIT", "imgUrl": "/img/monthlyStar.png" },
+    {
+      "title": " Oracle Redwood Application 2023 Certified Developer Associate",
+      "imgUrl": "/img/Redwood.png"
+    }
+  ]
+}
