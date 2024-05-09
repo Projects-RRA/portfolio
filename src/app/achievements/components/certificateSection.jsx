@@ -5,7 +5,7 @@ import certificateData from "../../../../public/data/certificateData.json";
 export const CertificateSection = () => {
   const { certificates } = certificateData;
   return (
-    <div className="grid grid-cols-2 gap-24 align-middle p-10 RR_CertificateGridWidth mx-4">
+    <div className="grid grid-cols-2 gap-24 align-mid dle p-10 RR_CertificateGridWidth mx-4">
       {certificates?.map((certificate) => {
         return (
           <div className="RR_Certificate__Images">
