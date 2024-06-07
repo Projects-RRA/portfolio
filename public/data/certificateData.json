@@ -1,7 +1,7 @@
 {
   "certificates": [
     {
-      "title": "Monthly Star Award - May: ApexIT",
+      "title": "Monthly Star Award - May : ApexIT",
       "imgUrl": "/img/certificates/MonthlyStar_May.png"
     },
     {
@@ -20,7 +20,7 @@
       "title": " Oracle Cloud Infrastructure 2023 AI Certified Foundations Associate",
       "imgUrl": "/img/certificates/AI.png"
     },
-    { "title": "Monthly Star Award: ApexIT", "imgUrl": "/img/certificates/MonthlyStar_Feb.png" },
+    { "title": "Monthly Star Award - February : ApexIT", "imgUrl": "/img/certificates/MonthlyStar_Feb.png" },
     {
       "title": " Oracle Redwood Application 2023 Certified Developer Associate",
       "imgUrl": "/img/certificates/Redwood.png"
