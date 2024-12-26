@@ -59,10 +59,10 @@ export const Banner = () => {
         <Row className="d-flex align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
-              {({ isVisible }) => (
+              {({ isvisible }) => (
                 <div
                   className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
+                    isvisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
                   <span className="tagline">{textWelcome}</span>
@@ -83,10 +83,10 @@ export const Banner = () => {
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
-              {({ isVisible }) => (
+              {({ isvisible }) => (
                 <div
                   className={
-                    isVisible ? "animate__animated animate__zoomIn" : ""
+                    isvisible ? "animate__animated animate__zoomIn" : ""
                   }
                 >
                   <img src="/img/bannerSideImage.png" alt="Header Img" loading="lazy"/>

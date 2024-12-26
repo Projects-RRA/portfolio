@@ -14,10 +14,10 @@ export const Projects = () => {
         <Row>
           <Col size={12}>
             <TrackVisibility>
-              {({ isVisible }) => (
+              {({ isvisible }) => (
                 <div
                   className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
+                    isvisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
                   <h2>{headings.headingProjects}</h2>
@@ -47,7 +47,7 @@ export const Projects = () => {
                     <Tab.Content
                       id="slideInUp"
                       className={
-                        isVisible ? "animate__animated animate__slideInUp" : ""
+                        isvisible ? "animate__animated animate__slideInUp" : ""
                       }
                     >
                       <Tab.Pane eventKey="first">

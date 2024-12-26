@@ -47,7 +47,7 @@ export const Skills = () => {
                 {/* This is a loop which fetches the skills data from skillData.json and returns the circular progress bar */}
                 {skills?.map((skill, index) => {
                   return (
-                    <div className="item RR_CustomCircle">
+                    <div className="item RR_CustomCircle" key={index}>
                       <CircularProgressbar
                         value={skill?.percentage}
                         text={skill?.percentage}
