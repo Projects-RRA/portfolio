@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import fortuneData from "../../../public/data/fortuneData.json";
 
 const FortunePage = () => {
   const [fortune, setFortune] = useState(null);

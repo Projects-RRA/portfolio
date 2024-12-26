@@ -2,7 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import skillsData from "../../../public/data/skillsData.json";
+import skillsData from "../../../../public/data/skillsData.json";
 
 export const Skills = () => {
   const { headings, skills } = skillsData;

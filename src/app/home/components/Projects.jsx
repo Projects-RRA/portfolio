@@ -3,7 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import ExperienceTimeline from "./TimeLine";
-import projectsData from "../../../public/data/projectsData.json";
+import projectsData from "../../../../public/data/projectsData.json";
 
 export const Projects = () => {
   const { headings, projects,contribution } = projectsData;

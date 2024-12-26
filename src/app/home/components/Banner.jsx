@@ -1,10 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import bannerData from "../../../public/data/bannerData.json";
+import bannerData from "../../../../public/data/bannerData.json";
 
 export const Banner = () => {
   const { textName, textWelcome, textAbout, textAboutSecondLine, roleForAnimation } = bannerData;
