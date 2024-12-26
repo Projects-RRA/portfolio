@@ -1,6 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import navLinks from "../../../public/data/navLinks.json";
-import FortunePage from "./Fortune";
+import FortunePage from "@app/components/Fortune";
 
 export const Footer = () => {
   const { linkdin, gmail } = navLinks;
