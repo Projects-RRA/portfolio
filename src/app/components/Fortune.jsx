@@ -46,7 +46,6 @@ const FortunePage = () => {
   //   setShowPopup(true);
   // };
 
-
   // Created a API under pages->api->randomFortune.js from there fetching data
 
   async function fetchFortune() {
@@ -64,11 +63,12 @@ const FortunePage = () => {
   }
 
   return (
-    <div>
+    <div className="flex items-baseline gap-3">
+      <p className="">Click here: </p>
       <button
         onClick={fetchFortune}
         disabled={loading}
-        className={`bg-transparent text-white font-bold py-2 px-4 rounded ${
+        className={`bg-transparent text-white font-bold rounded animate-pulse ${
           loading ? "cursor-not-allowed" : ""
         }`}
       >
@@ -77,7 +77,7 @@ const FortunePage = () => {
 
       {/* Popup */}
       {showPopup && (
-        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center">
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-10">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold mb-4">Your Fortune</h2>
             <p className="text-black">{fortune}</p>

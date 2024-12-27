@@ -156,6 +156,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 span.navbar-text {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .social-icon {
   display: inline-block;
@@ -318,13 +319,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  width: 96%;
 }
 .banner button {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
-  margin-top: 60px;
+  /* margin-top: 60px; */
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -721,6 +721,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:400");
+
+.navbar .show{
+  background-color:#121212;
+  padding: 1rem;
+}
 
 * {
   box-sizing: border-box;

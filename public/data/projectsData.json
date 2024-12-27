@@ -7,7 +7,8 @@
       "tab3Heading": "Experience"
     },
     "projects": [
-      {"title": "Personal Portfolio", "description": "Design & Development", "imgUrl": "/img/project_portfolio.png"}
+      {"title": "Personal Portfolio", "description": "Design & Development", "imgUrl": "/img/project_portfolio.png", "link": "https://rinithamin.in/"},
+      {"title": "Front End Development Project", "description": "Design & Development", "imgUrl": "/img/voyage-mate.png", "link": "https://voyage-mate.netlify.app/"}
     ],
     "contribution": [
         {"title": "Commerce Site Design", "description": "Design & Development", "imgUrl": "/img/contributionImage1.png"},
