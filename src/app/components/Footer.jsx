@@ -1,6 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
 import navLinks from "../../../public/data/navLinks.json";
-import FortunePage from "@app/components/Fortune";
 
 export const Footer = () => {
   const { linkdin, gmail } = navLinks;
@@ -23,7 +22,6 @@ export const Footer = () => {
               </a>
               {/*<a href="#"><img src='/img/nav-icon3.svg' alt="Icon" /></a> */}
             </div>
-            <FortunePage />
             <p>{`Copyright ${currentYear}. All Rights Reserved`}</p>
           </Col>
         </Row>

@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import bannerData from "../../../../public/data/bannerData.json";
+import FortunePage from "@app/components/Fortune";
 
 export const Banner = () => {
   const { textName, textWelcome, textAbout, textAboutSecondLine, roleForAnimation } = bannerData;
@@ -77,6 +78,7 @@ export const Banner = () => {
                   {/* <button onClick={() => console.log("connect")}>
                     {textLetsConnect} <ArrowRightCircle size={25} />
                   </button> */}
+                   <FortunePage />
                 </div>
               )}
             </TrackVisibility>

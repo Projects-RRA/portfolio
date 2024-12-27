@@ -1,9 +1,9 @@
 {
     "textName": "Hi! I'm Rinith Amin",
     "textWelcome": "Welcome to my Portfolio",
-    "textAbout": "Experienced in development, enhancement, maintenance, and production support for web-based multi-tier distributed applications, I am a skilled Oracle Commerce Cloud Consultant with a passion for delivering exceptional solutions. My expertise lies in Oracle Commerce Cloud.",
-    "textAboutSecondLine":"With a solid background in the IT industry, I bring extensive experience in software analysis, design, development, documentation, and implementation of applications.",
+    "textAbout": "I am an experienced professional in the development, enhancement, maintenance, and production support of web-based multi-tier distributed applications. My expertise spans Oracle Commerce Cloud, Oracle Field Service Cloud, Shopify, and Oracle Visual Builder Cloud Service (VBCS), showcasing my ability to adapt and deliver exceptional solutions across diverse platforms.",
+    "textAboutSecondLine":"With a strong foundation in the IT industry, I bring extensive experience in software analysis, design, development, documentation, and implementation of applications, coupled with certifications in Oracle Field Service Cloud and Shopify Development Fundamentals. My passion lies in leveraging my skills to drive innovative and impactful results.",
     "textLetsConnect": "Let’s Connect",
-    "roleForAnimation": ["Oracle Commerce Cloud Developer.", "FullStack Developer."]
+    "roleForAnimation": ["FullStack Developer.", "Oracle Commerce Cloud Developer.",  "Oracle Field Service Cloud.","Oracle Visual Builder","Shopify"]
 
 }

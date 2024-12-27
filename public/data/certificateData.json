@@ -1,6 +1,10 @@
 {
   "certificates": [
     {
+      "title": "Shopify Development Fundamentals",
+      "imgUrl": "/img/certificates/Shopify.png"
+    },
+    {
       "title": "Monthly Star Award - May : ApexIT",
       "imgUrl": "/img/certificates/MonthlyStar_May.png"
     },
