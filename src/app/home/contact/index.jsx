@@ -5,6 +5,7 @@ import { Input } from "@app/home/contact/components/input";
 import { TextArea } from "@app/home/contact/components/textarea";
 import { combineCSSClasses } from "@app/utils";
 import { IconBrandGithub } from "@tabler/icons-react";
+import Toast from "@app/components/Toast";
 
 export function ContactMeForm() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ export function ContactMeForm() {
     email: "",
     message: "",
   });
+  const [toast, setToast] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +26,20 @@ export function ContactMeForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Resetting the state of toast, to show eachtime onClick
+    setToast(null);
     console.log("Form submitted-->", formData);
+    // Keeping a bit delay to process the state
+    setTimeout(() => {
+      setToast({
+        title: "I got your message !",
+        description: "I will reply as soon as possible.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+        position: "top-right",
+      });
+    }, 0);
     setFormData({
       firstName: "",
       lastName: "",
@@ -54,6 +69,7 @@ export function ContactMeForm() {
                 type="text"
                 value={formData.firstName}
                 onChange={handleInputChange}
+                required
               />
             </LabelInputContainer>
             <LabelInputContainer>
@@ -81,6 +97,7 @@ export function ContactMeForm() {
               type="email"
               value={formData.email}
               onChange={handleInputChange}
+              required
             />
           </LabelInputContainer>
           <LabelInputContainer className="mb-4">
@@ -93,6 +110,7 @@ export function ContactMeForm() {
               placeholder="Your message/query here..."
               value={formData.message}
               onChange={handleInputChange}
+              required
             />
           </LabelInputContainer>
 
@@ -135,6 +153,7 @@ export function ContactMeForm() {
             </span>
             <BottomGradient />
           </button> */}
+            {toast && <Toast {...toast} />}
           </div>
         </form>
       </div>
