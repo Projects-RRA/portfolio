@@ -3,6 +3,7 @@ import Link from "next/link"; // Import Link from next/link
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import navLinks from "../../../public/data/navLinks.json";
+import { scrollToSection } from "@app/utils";
 
 const NavBar = () => {
   const { linkdin, gmail } = navLinks;
@@ -99,7 +100,7 @@ const NavBar = () => {
               </a>
               {/*<a href="#"><img src="/img/nav-icon3.svg" alt="" /></a> */}
             </div>
-            {/* <button className="vvd"><span>Let’s Connect</span></button> */}
+            <button onClick={() => scrollToSection("RRA_ContactForm")}><span>Let’s Connect</span></button>
           </span>
         </Navbar.Collapse>
       </Container>
