@@ -6,6 +6,7 @@ import LazyLoadedVideo from "@app/components/LazyLoadedVideo";
 import { Banner } from "@app/home/components/Banner";
 import { Skills } from "@app/home/components/Skills";
 import { Projects } from "@app/home/components/Projects";
+import { ContactMeForm } from "@app/home/contact";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Banner />
       <Skills />
       <Projects />
+      <ContactMeForm />
       <Footer />
     </div>
   );
