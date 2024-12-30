@@ -15,6 +15,8 @@ export function ContactMeForm() {
     message: "",
   });
   const [toast, setToast] = useState(null);
+  const [isDisabled, setisDisabled] = useState(false);
+  const [buttonText, setButtonText] = useState("Send →");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,29 +26,77 @@ export function ContactMeForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Resetting the state of toast, to show eachtime onClick
-    setToast(null);
-    console.log("Form submitted-->", formData);
-    // Keeping a bit delay to process the state
-    setTimeout(() => {
+
+    setToast(null); // Reset toast state
+    setButtonText("Sending...");
+    setisDisabled(true);
+    try {
+      let response = await fetch(
+        "https://contact-backend-production-e63b.up.railway.app/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      let result = await response.json();
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        message: "",
+      });
+
+      if (result.code === 200) {
+        setToast({
+          title: "I got your message!",
+          description: "I will reply as soon as possible.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+          position: "top-right",
+        });
+      } else if (result.code === 429) {
+        setToast({
+          title: "Too many request!",
+          description: "Please try again after sometime.",
+          status: "warning",
+          duration: 5000,
+          isClosable: true,
+          position: "top-right",
+        });
+      } else {
+        setToast({
+          title: "Error",
+          description: "Something went wrong.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+          position: "top-right",
+        });
+      }
+    } catch (error) {
+      console.error(error);
       setToast({
-        title: "I got your message !",
-        description: "I will reply as soon as possible.",
-        status: "success",
+        title: "Error",
+        description: "Network error or server issue.",
+        status: "error",
         duration: 5000,
         isClosable: true,
         position: "top-right",
       });
-    }, 0);
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      message: "",
-    });
+    } finally {
+      setButtonText("Send →");
+      setisDisabled(false);
+    }
   };
+
   return (
     <section className="RRA-contact p-8" id="contact">
       <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[#151515]">
@@ -69,6 +119,8 @@ export function ContactMeForm() {
                 type="text"
                 value={formData.firstName}
                 onChange={handleInputChange}
+                disabled={isDisabled}
+                style={{ cursor: isDisabled ? "not-allowed" : "auto" }}
                 required
               />
             </LabelInputContainer>
@@ -81,6 +133,8 @@ export function ContactMeForm() {
                 name="lastName"
                 placeholder="Doe"
                 type="text"
+                disabled={isDisabled}
+                style={{ cursor: isDisabled ? "not-allowed" : "auto" }}
                 value={formData.lastName}
                 onChange={handleInputChange}
               />
@@ -95,6 +149,8 @@ export function ContactMeForm() {
               name="email"
               placeholder="jhon.doe@gmail.com"
               type="email"
+              disabled={isDisabled}
+              style={{ cursor: isDisabled ? "not-allowed" : "auto" }}
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -109,6 +165,8 @@ export function ContactMeForm() {
               name="message"
               placeholder="Your message/query here..."
               value={formData.message}
+              disabled={isDisabled}
+              style={{ cursor: isDisabled ? "not-allowed" : "auto" }}
               onChange={handleInputChange}
               required
             />
@@ -117,8 +175,10 @@ export function ContactMeForm() {
           <button
             className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
             type="submit"
+            disabled={isDisabled}
+            style={{ cursor: isDisabled ? "not-allowed" : "pointer" }}
           >
-            Send &rarr;
+            {buttonText}
             <BottomGradient />
           </button>
 
@@ -127,32 +187,18 @@ export function ContactMeForm() {
           <div className="flex flex-col space-y-4">
             <button
               className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-              type="submit"
+              type="button"
             >
               <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-              <span className="text-neutral-700 dark:text-neutral-300 text-sm">
+              <a
+                href="https://github.com/RINITH-AMIN"
+                className="text-neutral-700 dark:text-neutral-300 text-sm no-underline"
+                target="_blank"
+              >
                 GitHub
-              </span>
+              </a>
               <BottomGradient />
             </button>
-            {/* <button
-            className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit">
-            <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-            <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-              Google
-            </span>
-            <BottomGradient />
-          </button>
-          <button
-            className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit">
-            <IconBrandOnlyfans className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-            <span className="text-neutral-700 dark:text-neutral-300 text-sm">
-              OnlyFans
-            </span>
-            <BottomGradient />
-          </button> */}
             {toast && <Toast {...toast} />}
           </div>
         </form>
