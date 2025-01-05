@@ -72,7 +72,7 @@ const FortunePage = () => {
           loading ? "cursor-not-allowed" : ""
         }`}
       >
-        Check Your Fortune
+        <span className="underline">Check Your Fortune</span>
       </button>
 
       {/* Popup */}

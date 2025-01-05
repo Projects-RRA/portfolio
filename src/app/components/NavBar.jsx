@@ -11,6 +11,7 @@ const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [currentPath, setcurrentPath] = useState("/");
   const [isHomePage, setIsHomePage] = useState(true);
+  const [expanded, setExpanded] = useState(false); // State for toggling menu
 
   useEffect(() => {
     const currentRoute = window.location.pathname;
@@ -18,7 +19,7 @@ const NavBar = () => {
   });
 
   useEffect(() => {
-    if (currentPath != "/") {
+    if (currentPath !== "/") {
       setIsHomePage(false);
     }
   }, [currentPath]);
@@ -39,12 +40,20 @@ const NavBar = () => {
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
+    setExpanded(false); // Close the menu on link click
   };
 
   return (
-    <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+    <Navbar
+      expand="md"
+      className={scrolled ? "scrolled" : ""}
+      expanded={expanded} // Bind expanded state to Navbar
+    >
       <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={() => setExpanded(!expanded)} // Toggle menu visibility
+        >
           <span className="navbar-toggler-icon"></span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
@@ -91,20 +100,28 @@ const NavBar = () => {
             </Link>
           </Nav>
           <span className="navbar-text">
-            <div className="social-icon">
+            {/* <div className="social-icon">
               <a href={linkdin} target="_blank">
                 <img src="/img/nav-icon1.svg" alt="" />
               </a>
               <a href={`mailto:${gmail}`}>
                 <img src="/img/nav-icon4.svg" alt="" />
               </a>
-              {/*<a href="#"><img src="/img/nav-icon3.svg" alt="" /></a> */}
-            </div>
-            <button onClick={() => scrollToSection("RRA_ContactForm")}><span>Let’s Connect</span></button>
+            </div> */}
+            {isHomePage && (
+              <Link
+                href="#RRA_ContactForm"
+                onClick={() => onUpdateActiveLink("RRA_ContactForm")}
+                className="RRA-ConnectButton no-underline"
+              >
+                <span>Let’s Connect</span>
+              </Link>
+            )}
           </span>
         </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 };
+
 export default NavBar;

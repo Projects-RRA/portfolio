@@ -17,9 +17,9 @@ export const Footer = () => {
               <a href={linkdin} target="_blank">
                 <img src="/img/nav-icon1.svg" alt="Icon" />
               </a>
-              <a href={`mailto:${gmail}`}>
+              {/* <a href={`mailto:${gmail}`}>
                 <img src="/img/nav-icon4.svg" alt="" />
-              </a>
+              </a> */}
               {/*<a href="#"><img src='/img/nav-icon3.svg' alt="Icon" /></a> */}
             </div>
             <p>{`Copyright ${currentYear}. All Rights Reserved`}</p>
